@@ -62,6 +62,7 @@ void setup() {
 
 
 // De primera instancia, se crea subrutina llamada SALIDA
+// Solamente funciona una sola vez. 
 
 void SALIDA(){
     delay(5000);
@@ -99,6 +100,8 @@ void SALIDA(){
 
 
 
+// Comienza el verdadero ciclo del programa entero
+// El loop principal cuenta con funciones dentro. 
 
 void loop() {
     temB1 = 0; temB2 = 0; temB3 = 0; temB4 = 0;
@@ -144,6 +147,8 @@ void loop() {
 
 
 // Luego hacemos otra rutina para encontrar el centroide, se llamará REGLAS()
+// Sirve igualmene para hacer la relación entre las entradas con las salida
+// de forma correcta
 void REGLAS(){
     for(pib = 0; pib < 100; pib++){
         R1[pib] = min(FTB, SFTA[pib]);

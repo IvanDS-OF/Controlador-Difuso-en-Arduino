@@ -42,19 +42,49 @@ A forma de enunciado podemos decir que
 
 
 ## Controlador
+El controlador del código de este repo se divide en 2 partes
 
+Entrada: Temperatura (Grados Centigrados) -> Baja _(0 a 50)_, Media _(25 a 75)_, Alta _(50 a 100)_
+Salida: Energía (Ventilador) -> Baja _(0 a 50)_, Media _(25 a 75)_, Alta _(50 a 100)_
 
+Al final, la relación que existe entre la entrada y la salida está dada **en función del error** [^1]
 
 ### Partes del código
 
+Comenzamos por declarar los sensores de entrada. Como es un programa que interactua con el ambiente físico, es necesario declarar las entradas dados los puertos del Arduino en físico. 
 
+Declaramos los valores de entrada 
++ Límites
++ Fórmula
+
+Declaramos los valores de salida igual que en la entrada. 
++ Límites
++ Fórmula
+
+Declaramos propiedades del controlador
+
+Inicializamos el **void setup()** propio de Arduino, colocamos los valores de entrada y hacemos un **for** para declarar y asignar las variables de salida y las reglas del controlador. 
+
+Creamos una función llamada **SALIDA** que solo se leerá una vez, sirve para fusificar la salida. 
+
+Iniciamos el **void loop()**, es aquí en donde leemos la señal de entrada y se irá evaluando en las funciones de membresía de entrada. Igualmente se manda a imprimir los valores que corresponde _(dada la evaluación en tiempo real)_ de cada una de las funciones de membrsia. También se manda a llamar a dos funciones llamadas **REGLAS** y **DEFUZZ**
+
+La función **REGLAS** evalua x100 el resultado de la evaluación de las funciones de membresía en ese momento y al final obtiene un solo dato _que será el responsable de nuestra salida_
+
+Al final la función llamada **DEFUZZ** acondiciona mediante una división el valor que necesita la salida real física, con aquella que podemos medir e interactuar. Del mismo modo, imprime los valores obtenidos en la función **REGLAS**.
 
 ### Funciones de membresía utilizadas. 
 
+Lsa funciones de membresía que fueron utilizadas en el código tienen una forma en campana de Gauss. 
 
 ## Simulación en MATLAB del comportamiento del controlador
 
+Para ver un video de solo el comportamiento de un controlador difuso puede [acceder al siguiente link](https://www.youtube.com/channel/UCofJf08TrJSXlsfADJIiWsQ)
 
 
+
+
+
+[^1]: Error = Valor deseado - Valor actual   :v:
 
 

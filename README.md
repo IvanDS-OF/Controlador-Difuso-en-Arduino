@@ -79,7 +79,7 @@ Lsa funciones de membresía que fueron utilizadas en el código tienen una forma
 
 ## Simulación en MATLAB del comportamiento del controlador
 
-Para ver un video de solo el comportamiento de un controlador difuso puede [acceder al siguiente link](https://www.youtube.com/channel/UCofJf08TrJSXlsfADJIiWsQ)
+Para ver un video de solo el comportamiento de un controlador difuso puede [acceder al siguiente link](https://youtu.be/roEcpSXAyCQ)
 
 
 
